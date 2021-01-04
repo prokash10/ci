@@ -53,9 +53,17 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+// $route['(:any)']="User/index";
+
 
 $route['products'] = "products/index";
 $route['productsCreate']['post'] = "products/store";
 $route['productsEdit/(:any)'] = "products/edit/$1";
 $route['productsUpdate/(:any)']['put'] = "products/update/$1";
 $route['productsDelete/(:any)']['delete'] = "products/delete/$1";
+$route['user']="User/index";
+
+$route['user/login_user']="products/index";
+
+
+

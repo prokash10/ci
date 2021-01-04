@@ -9,7 +9,9 @@ class Products extends CI_Controller {
    public function __construct() {
     //load database in autoload libraries 
       parent::__construct(); 
-      $this->load->model('ProductsModel');         
+      $this->load->helper('url');
+      $this->load->model('ProductsModel');  
+      $this->load->library('session');       
    }
    public function index()
    {
@@ -18,12 +20,14 @@ class Products extends CI_Controller {
        $this->load->view('includes/header');       
        $this->load->view('products/list',$data);
        $this->load->view('includes/footer');
+   
    }
    public function create()
    {
       $this->load->view('includes/header');
       $this->load->view('products/create');
-      $this->load->view('includes/footer');      
+      $this->load->view('includes/footer');     
+    
    }
    /**
     * Store Data from this method.
@@ -35,6 +39,7 @@ class Products extends CI_Controller {
        $products=new ProductsModel;
        $products->insert_product();
        redirect(base_url('products'));
+    
     }
    /**
     * Edit Data from this method.
@@ -46,7 +51,8 @@ class Products extends CI_Controller {
        $product = $this->db->get_where('products', array('id' => $id))->row();
        $this->load->view('includes/header');
        $this->load->view('products/edit',array('product'=>$product));
-       $this->load->view('includes/footer');   
+       $this->load->view('includes/footer');  
+    
    }
    /**
     * Update Data from this method.

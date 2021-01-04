@@ -5,7 +5,9 @@ class Bill extends CI_Controller {
 	
 
 public function __Construct(){
-    parent::__construct();
+	parent::__construct();
+	$this->load->helper('url');
+	$this->load->library('session');
     $this->load->model('bill');
     
 
@@ -15,8 +17,7 @@ public function __Construct(){
 	{
 		$bill=new bill;
 		$data['data']=$bill->get_bill();
-		$this->load->view(includes/header);
-		$this->load->view(include/footer);
+		$this->load->view(includes/header);		
 		$this->load->view(bill/lidt,$data);
 	}
 	public function create(){

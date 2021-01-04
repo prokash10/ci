@@ -1,0 +1,22 @@
+{
+  "name": "codeigniter",
+  "version": "1.0.0",
+  "description": "this is ci crude operation",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prokash10/ci.git"
+  },
+  "keywords": [
+    "ci"
+  ],
+  "author": "prokas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prokash10/ci/issues"
+  },
+  "homepage": "https://github.com/prokash10/ci#readme"
+}
